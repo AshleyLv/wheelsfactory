@@ -1,0 +1,1 @@
+export const SEARCH_PLUGIN = 'SEARCH_PLUGIN';
