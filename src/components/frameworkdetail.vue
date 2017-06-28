@@ -10,8 +10,8 @@
 			</div>
 
 			<div class="fw-doc">
-				<div v-html="fwItem.document">{{fwItem.document}}</div> 
-
+				<div v-html="fwItem.document">{{fwItem.document}}</div>  
+								
 	</div>
 </div> 
 </div>
@@ -21,7 +21,7 @@
 	import Vue from 'vue'
 	import mdButton from './button'
 	import hljs from 'highlight.js'
-	import {basePath} from './utils/util.js'
+	import {basePath,getFrameworkDetailApi} from './utils/util.js'
 	export default{
 		data(){
 			return {
@@ -38,7 +38,7 @@
 		},
 		methods: {
 			loadFrameworkItem(){
-				this.$http.get(basePath+'/api/getFrameworkItem?id='+this.$route.query.id).then((response)=>{
+				this.$http.get(basePath+getFrameworkDetailApi+'?id='+this.$route.query.id).then((response)=>{
 					let data = response.data
 					if(data.status == 0){
 						this.fwItem = data.result[0]

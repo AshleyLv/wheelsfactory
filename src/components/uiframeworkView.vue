@@ -23,7 +23,7 @@
 </template>
 <script>
 	import mdButton from './button'
-    import {basePath} from './utils/util.js'
+    import {basePath,loadFrameworkItemsApi} from './utils/util.js'
 	export default{
 		data: function () {
 			return {
@@ -44,7 +44,7 @@
         methods:{
         	loadFrameworkItems : function(){
         		var self = this
-        		this.$http.post(basePath+'/api/loadFrameworkItems',{'page': this.currentPage,'rows':this.rows}).then(function(response){
+        		this.$http.post(basePath+loadFrameworkItemsApi,{'page': this.currentPage,'rows':this.rows}).then(function(response){
         			let data = response.data
         			if(data.status == 0){
         				self.totalPage = data.total

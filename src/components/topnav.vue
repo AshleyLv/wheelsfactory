@@ -19,9 +19,6 @@
       <router-link :to="{ path: 'home', query: { filter: 'angular' }}" class="main-nav-button md-button"> Angular插件</router-link>
     </li>
     <li class="l-left">
-      <router-link :to="{ path: 'home', query: { filter: 'jquery' }}" class="main-nav-button md-button"> jQuery插件</router-link>
-    </li>
-    <li class="l-left">
       <router-link :to="{ path: 'uiFramework'}" class="main-nav-button md-button"> UI框架</router-link>
     </li>
     <li class="l-left">

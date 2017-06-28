@@ -12,7 +12,7 @@
 						<div>
 							<ul class="social-icons">
 								<li>
-								<a class="github"></a>
+								<a class="github" href="https://github.com/AshleyLv/wheelsfactory" target="_blank"></a>
 								</li>
 								<li>
 									<a class="sina"></a>

@@ -35,7 +35,7 @@
 import card from './card'
 import mdButton from './button'
 import VueLazyload from 'vue-lazyload'
-import {basePath} from './utils/util.js'
+import {basePath,loadPluginsApi} from './utils/util.js'
     export default{
         data(){
             return{
@@ -75,7 +75,7 @@ import {basePath} from './utils/util.js'
         	loadPlugins:function(){
         		var self = this
                 this.totalPage = 0
-        		this.$http.post(basePath+'/api/pluginItem',{'page': this.currentPage,'rows':this.rows,'filter':this.$route.query.filter!='all'?this.$route.query.filter:''}).then(function(response){
+        		this.$http.post(basePath+loadPluginsApi,{'page': this.currentPage,'rows':this.rows,'filter':this.$route.query.filter!='all'?this.$route.query.filter:''}).then(function(response){
         			let data = response.data
         			if(data.status == 0){
         				self.totalPage = data.total

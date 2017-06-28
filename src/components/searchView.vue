@@ -21,7 +21,7 @@
 </template>
 <script>
 	import mdButton from './button'
-	import {basePath} from './utils/util.js'
+	import {basePath,searchTagApi,searchPluginItemApi} from './utils/util.js'
 	export default{
 		data: function(){
 			return {
@@ -54,7 +54,7 @@
 			loadPlugins:function(){
 				var self = this
 				if(this.$route.query.searchtype==='byTag'){
-					this.$http.post(basePath+'/api/searchByTag',{'page': this.currentPage,'rows':this.rows,'tagId':this.$route.query.id}).then(function(response){
+					this.$http.post(basePath+searchTagApi,{'page': this.currentPage,'rows':this.rows,'tagId':this.$route.query.id}).then(function(response){
 						let data = response.data
 						if(data.status == 0){
 							self.totalPage = data.total
@@ -67,7 +67,7 @@
 
 					})
 				} else if(this.$route.query.searchtype==='bySearch'){
-					this.$http.post(basePath+'/api/searchPluginItem',{'page': this.currentPage,'rows':this.rows,'keyword':this.$store.state.keyword}).then(function(response){
+					this.$http.post(basePath+searchPluginItemApi,{'page': this.currentPage,'rows':this.rows,'keyword':this.$store.state.keyword}).then(function(response){
 						let data = response.data
 						if(data.status == 0){
 							self.totalPage = data.total

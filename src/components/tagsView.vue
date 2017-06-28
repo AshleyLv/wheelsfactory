@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-import {basePath} from './utils/util.js'
+import {basePath,loadAllTagsApi} from './utils/util.js'
 export default{
 	data: function(){
 		return {
@@ -17,7 +17,7 @@ export default{
 	methods: {
 		loadTags: function(){
 
-        		this.$http.get(basePath+'/api/getAllTags').then((response)=>{
+        		this.$http.get(basePath+loadAllTagsApi).then((response)=>{
         			let data = response.data
         			if(data.status == 0){
         				data.pluginTagList.forEach((element)=>this.tagList.push(element))

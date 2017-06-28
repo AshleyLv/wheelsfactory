@@ -132,7 +132,7 @@
 import Qrcode from 'v-qrcode/src/index'
 import VueStar from 'vue-star'
 import mdButton from './button'
-import {basePath} from './utils/util.js'
+import {basePath,pluginDetailApi,updateReadCounterApi,updateLikeCounterApi} from './utils/util.js'
 	export default{
 		 data(){
 		 	return{
@@ -166,7 +166,7 @@ import {basePath} from './utils/util.js'
         methods:{
         	loadPluginItem: function(){
         		var self = this
-        		this.$http.get(basePath+'/api/getPluginById?id='+this.$route.query.id).then(function(response){
+        		this.$http.get(basePath+pluginDetailApi+'?id='+this.$route.query.id).then(function(response){
         			let data = response.data
         			if(data.status == 0){
         				this.pluginObj = data.result[0]
@@ -205,14 +205,14 @@ import {basePath} from './utils/util.js'
         		return basePath
         	},
         	updateReadCounter:function(){
-        		this.$http.post(basePath+'/api/updateReadCounter',{'id':this.$route.query.id})
+        		this.$http.post(basePath+updateReadCounterApi,{'id':this.$route.query.id})
         	},
         	updateLikeCounter:function(){
         		if(this.toggleLike){
-        			this.$http.post(basePath+'/api/updateLikeCounter',{'id':this.$route.query.id,'isAdding':true})
+        			this.$http.post(basePath+updateLikeCounterApi,{'id':this.$route.query.id,'isAdding':true})
         			this.pluginObj.likeCounter++
         		} else {
-        			this.$http.post(basePath+'/api/updateLikeCounter',{'id':this.$route.query.id,'isAdding':false})
+        			this.$http.post(basePath+updateLikeCounterApi,{'id':this.$route.query.id,'isAdding':false})
         		this.pluginObj.likeCounter--
         		}
         		this.toggleLike=!this.toggleLike
@@ -226,7 +226,7 @@ import {basePath} from './utils/util.js'
         	},
         	getTags: function(){
         		let self = this
-        		this.$http.get(basePath+'/api/getTagByPluginItemId?id='+this.$route.query.id).then(function(response){
+        		this.$http.get(basePath+getTagsApi+'?id='+this.$route.query.id).then(function(response){
         			let data = response.data
         			if(data.status==0){
         				data.pluginTagList.forEach(function(element){
