@@ -10,7 +10,7 @@
   </button>
   <ul v-show="!isDropdownMeun || isShowMenu">
     <li class="l-left">
-      <router-link :to="{ path: 'home', query: { filter: 'all' }}" class="main-nav-button md-button">首页</router-link>
+      <router-link :to="{ path: 'home'}" class="main-nav-button md-button">首页</router-link>
     </li>
     <li class="l-left">
        <router-link :to="{ path: 'home', query: { filter: 'vue' }}" class="main-nav-button md-button">Vue组件</router-link>

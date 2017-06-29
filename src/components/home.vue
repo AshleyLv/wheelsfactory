@@ -60,10 +60,10 @@ import {basePath,loadPluginsApi} from './utils/util.js'
                 this.loadPlugins()
                 
                 }
-                if(val==='all'){
-                this.hasFilter=false
+                if(val==='vue' || val==='angular'){
+                this.hasFilter=true
                 } else{
-                this.hasFilter = true
+                this.hasFilter = false
                 }
         		
         	}
@@ -75,7 +75,7 @@ import {basePath,loadPluginsApi} from './utils/util.js'
         	loadPlugins:function(){
         		var self = this
                 this.totalPage = 0
-        		this.$http.post(basePath+loadPluginsApi,{'page': this.currentPage,'rows':this.rows,'filter':this.$route.query.filter!='all'?this.$route.query.filter:''}).then(function(response){
+        		this.$http.post(basePath+loadPluginsApi,{'page': this.currentPage,'rows':this.rows,'filter':(this.$route.query.filter=='vue'||this.$route.query.filter=='angular')?this.$route.query.filter:''}).then(function(response){
         			let data = response.data
         			if(data.status == 0){
         				self.totalPage = data.total
