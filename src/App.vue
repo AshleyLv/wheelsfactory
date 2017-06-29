@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-  <div>Loading</div>
   <div id="wrapper">
     <top-nav></top-nav>
     <router-view></router-view>

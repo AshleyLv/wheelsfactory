@@ -9,10 +9,12 @@
   <title>轮子工厂 - web前端组件分享,vue,angularjs,jquery</title>
   <style type="text/css">
     .loading{
-      font-size: 100px;
+      font-size: 40px;
       font-family: Roboto, Verdana, sans-serif;
-      margin: 200px auto 0;
-      width: 1000px;
+      position:fixed;left:50%;top:50%;
+      margin-left: -100px;
+      margin-top: -30px;
+      
       color: #f35626;
       background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
       -webkit-background-clip: text;
@@ -20,18 +22,7 @@
       -webkit-animation: hue 5s infinite linear;
       text-align: center;
     }
-    .sub{
-      font-size: 50px;
-      margin: 50px auto 0;
-      color: #f35626;
-      width:500px;
-      font-family: Roboto, Verdana, sans-serif;
-      background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-animation: hue 5s infinite linear;
-      text-align: center;
-    }
+    
     @-webkit-keyframes hue {
       from {
         -webkit-filter: hue-rotate(0deg);
@@ -50,8 +41,8 @@
   <h1 style="display: none;">轮子工厂,web,前端,vue,js,javascript,组件,插件,jquery,ui,ui框架,angular,angularjs,css3,html5</h1>
 
   <div id="app">
-    <div class="loading">WHEELS FACTORY</div>
-    <div class="sub">Loading...</div>
+    <div class="loading">Loading...</div>
+   
   </div>
 
   <!-- built files will be auto injected -->
