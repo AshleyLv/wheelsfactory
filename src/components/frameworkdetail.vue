@@ -12,6 +12,7 @@
 			<div class="fw-doc">
 				<div v-html="fwItem.document">{{fwItem.document}}</div>  
 				
+				
 								
 	</div>
 </div> 

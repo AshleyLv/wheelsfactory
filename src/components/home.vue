@@ -54,7 +54,7 @@ import {basePath,loadPluginsApi} from './utils/util.js'
         },
         watch:{
         	'$route.query.filter'(val){
-                if(val && val!='search'){
+                if(val!='search'){
                 this.pluginList.splice(0,this.pluginList.length)
                 this.currentPage = 0
                 this.loadPlugins()

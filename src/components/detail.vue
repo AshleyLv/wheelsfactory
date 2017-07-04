@@ -132,7 +132,7 @@
 import Qrcode from 'v-qrcode/src/index'
 import VueStar from 'vue-star'
 import mdButton from './button'
-import {basePath,pluginDetailApi,updateReadCounterApi,updateLikeCounterApi} from './utils/util.js'
+import {basePath,pluginDetailApi,updateReadCounterApi,updateLikeCounterApi,getTagsApi} from './utils/util.js'
 	export default{
 		 data(){
 		 	return{
