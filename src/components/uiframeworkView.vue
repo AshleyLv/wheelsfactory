@@ -1,7 +1,7 @@
 <template>
 	<div class="fw-view">
 		<router-link :to="{ path: 'fwDetail', query: { id: fw.id }}" class="fw-card" v-for="fw in frameworkList">
-			<img v-bind:src="basePath + '/api/readImage?image='+fw.cover" width="660">
+			<img v-lazy="basePath + '/api/readImage?image='+fw.cover" width="660">
 			<a class="fw-title">{{fw.title}}</a>
 			<div>
 				{{fw.description}}

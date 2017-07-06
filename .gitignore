@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+.idea/
+src/components/utils/
+/static/
+
+.babelrc
+
+.editorconfig
+
+*.zip
+build/
+src/components/utils/util.js

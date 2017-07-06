@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<div class="fw-detail-view">
-			<img v-bind:src="basePath + '/api/readImage?image='+fwItem.detailCover" height="606" width="2556" class="fw-cover">
+			<img v-lazy="basePath + '/api/readImage?image='+fwItem.detailCover" height="606" width="2556" class="fw-cover">
 
 			<div class="fw-btn-group">
 				<md-button type="button" class="desc-label" :inverse="true" @btnClick='openLink(fwItem.homepageUrl)' v-if="fwItem.homepageUrl">项目官网</md-button>
@@ -10,10 +10,8 @@
 			</div>
 
 			<div class="fw-doc">
-				<div v-html="fwItem.document">{{fwItem.document}}</div>  
-				
-				
-								
+				<div v-html="fwItem.document">{{fwItem.document}}</div>   
+					
 	</div>
 </div> 
 </div>
